@@ -35,6 +35,11 @@ const Index = ({ setShowForm }) => {
         {formState === 1 && <FormOne setFormState={setFormState} />}
         {formState === 2 && <FormTwo setFormState={setFormState} />}
         {formState === 3 && <FormThree setFormState={setFormState} />}
+        {formState === 4 && (
+          <div style={{ width: "200px", height: "200px", background: "#fff" }}>
+            Transaction Complete
+          </div>
+        )}
       </ModalContainer>
     </Container>
   );

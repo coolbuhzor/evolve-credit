@@ -83,8 +83,18 @@ export const Form = styled.form`
     color: #57586e;
   }
   button {
+    width: 48%;
+    height: 52px;
+    border: 0.3px solid rgb(0, 0, 0, 0.4);
+    border-radius: 20px;
     background: transparent;
-    border: 1px solid blue;
+    // typography
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #0a083b;
   }
 `;
 
@@ -105,27 +115,5 @@ export const FormRow = styled.div`
     font-size: 14px;
     line-height: 24px;
     color: #000000;
-  }
-`;
-
-export const ButtonDiv = styled.div`
-  width: 90%;
-  // margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-
-  button {
-    width: 48%;
-    height: 52px;
-    border: 0.3px solid rgb(0, 0, 0, 0.4);
-    border-radius: 20px;
-    background: transparent;
-    // typography
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    color: #0a083b;
   }
 `;
