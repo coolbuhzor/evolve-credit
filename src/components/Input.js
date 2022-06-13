@@ -12,11 +12,11 @@ function InputField({
   onChange,
   optional,
 }) {
-  const [showPassword, setShowPassword] = React.useState(false);
-  const handleClick = (e) => {
-    e.preventDefault();
-    setShowPassword(!showPassword);
-  };
+  // const [showPassword, setShowPassword] = React.useState(false);
+  // const handleClick = (e) => {
+  //   e.preventDefault();
+  //   setShowPassword(!showPassword);
+  // };
   return (
     <InputDiv className="form-group">
       {label && (
@@ -29,7 +29,7 @@ function InputField({
         <input
           data-testid="input-field"
           // test-id="input-field"
-          type={showPassword ? "text" : type || "text"}
+          type={type}
           value={value}
           name={name}
           placeholder={placeholder}
