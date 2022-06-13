@@ -15,11 +15,24 @@ export const Container = styled.div`
 
 export const ModalContainer = styled.div`
   width: 600px;
-  height: 530px;
+  min-height: 400px;
+  max-height: 750px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 15px;
+  border-radius: 20px;
+  position: relative;
+  overflow-y: scroll;
+  .evolve-test-div {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const Header1 = styled.h1`
@@ -56,11 +69,10 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
-  // height: ${(props) => (props.small ? "70%" : "100%")};
-  justify-content: ${(props) => (props.small ? "center" : "space-around")};
-  .credo__register-form-margin-top {
-    margin-top: 20px;
-  }
+  height: 100%;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
   aside {
     margin-top: 20px;
     font-style: normal;
@@ -69,6 +81,10 @@ export const Form = styled.form`
     line-height: 50px;
     letter-spacing: -0.02em;
     color: #57586e;
+  }
+  button {
+    background: transparent;
+    border: 1px solid blue;
   }
 `;
 

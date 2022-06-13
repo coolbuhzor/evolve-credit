@@ -1,11 +1,14 @@
 import React from "react";
 import InputField from "../components/Input";
-import { Form, Formik } from "formik";
+import { Formik } from "formik";
 import * as Yup from "yup";
-import { ButtonDiv, ErrorStyled, FormRow, Header1, Paragraph } from "../styles";
+// import ClipLoader from "react-spinners/ClipLoader";
+
+import { ErrorStyled, FormRow, Header1, Paragraph, Form } from "../styles";
 import axios from "axios";
 
 const FormOne = ({ setFormState }) => {
+  // const [isLoading, setIsLoading] = React.useState(false);
   const validationSchema = Yup.object().shape({
     firstName: Yup.string().required("Enter Your First Name"),
     lastName: Yup.string().required("Enter Your Last Name"),
@@ -14,10 +17,9 @@ const FormOne = ({ setFormState }) => {
     date: Yup.date().required("Add date of birth"),
   });
 
-  const handleLoginSubmit = (values, { setSubmitting }) => {
+  const handleLoginSubmit = (values) => {
     const age = new Date().getFullYear() - values.date.split("-")[0];
-    console.log(age, "age");
-    setSubmitting(true);
+
     axios
       .post("https://6297078214e756fe3b273ab8.mockapi.io/bnpl/api/profile", {
         firstName: values.firstName,
@@ -33,8 +35,8 @@ const FormOne = ({ setFormState }) => {
       .catch(function (error) {
         console.log(error);
       });
-
-    setSubmitting(false);
+    // setSubmitting(true);
+    // setIsLoading(true);
   };
   return (
     <>
@@ -178,8 +180,15 @@ const FormOne = ({ setFormState }) => {
               </FormRow>
               <FormRow className="credo__register-form-margin-top">
                 <button type="submit">
-                  {/* {setSubmitting ? "proceed" : "loading"} */}
-                  proceed{" "}
+                  proceed
+                  {/* {isLoading ? "proceed" : <Spinner />} */}
+                  {/* <ClipLoader
+                    color="#fff"
+                    loading={isLoading}
+                    // css={override}
+                    size={150}
+                  /> */}
+                  {/* {!isLoading && "proceed"} */}
                 </button>
               </FormRow>
             </Form>

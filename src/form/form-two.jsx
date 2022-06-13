@@ -1,8 +1,8 @@
 import React from "react";
 import InputField from "../components/Input";
-import { Form, Formik } from "formik";
+import { Formik } from "formik";
 import * as Yup from "yup";
-import { ButtonDiv, ErrorStyled, FormRow, Header1, Paragraph } from "../styles";
+import { ErrorStyled, FormRow, Form, Header1, Paragraph } from "../styles";
 import axios from "axios";
 
 const FormTwo = ({ setFormState }) => {
@@ -65,6 +65,8 @@ const FormTwo = ({ setFormState }) => {
             handleSubmit,
           }) => (
             <Form onSubmit={handleSubmit}>
+              <Header1>Bank Details</Header1>
+              <Paragraph>Enter Your Bank Details</Paragraph>
               <FormRow>
                 <div className="inner-div">
                   <InputField

@@ -52,7 +52,7 @@ const InputDiv = styled.div`
   box-sizing: border-box;
   position: relative;
   width: 100%;
-  min-width: 395px;
+  // min-width: 395px;
   cursor: pointer;
   margin: 10px 0;
   font-family: "Roboto", sans-serif;
